@@ -30,7 +30,7 @@ chat-bot-openai/
 ### Interface Web (Frontend)
 Abaixo está a interface gráfica do Chat Bot, desenvolvida em HTML, CSS e JavaScript:
 
-![Interface do Chat Bot](./image/Front.png)
+![Interface do Chat Bot](./image/front.png)
 
 ### Execução no Terminal
 A imagem abaixo mostra o servidor rodando corretamente no terminal:
