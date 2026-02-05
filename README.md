@@ -128,3 +128,5 @@ JavaScript (Vanilla)
 ✔ Frontend funcional
 ✔ Integração com OpenAI pronta
 ✔ Tratamento de erro implementado
+
+Vitor Dutra Melo - Desenvolvedor 
