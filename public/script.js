@@ -1,24 +1,22 @@
-const sendBtn = document.getElementById("send");
-const messageInput = document.getElementById("message");
-const reply = document.getElementById("reply");
+async function sendMessage() {
+  const messageInput = document.getElementById("message");
+  const chat = document.getElementById("chat");
 
-sendBtn.addEventListener("click", async () => {
-  const message = messageInput.value.trim();
-
+  const message = messageInput.value;
   if (!message) return;
 
-  reply.textContent = "Thinking...";
+  chat.innerHTML += `<div class="message user"><strong>Você:</strong> ${message}</div>`;
+  messageInput.value = "";
 
-  try {
-    const response = await fetch("/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message })
-    });
+  const response = await fetch("/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message })
+  });
 
-    const data = await response.json();
-    reply.textContent = data.reply;
-  } catch (error) {
-    reply.textContent = "Error connecting to server.";
-  }
-});
+  const data = await response.json();
+
+  chat.innerHTML += `<div class="message bot"><strong>Bot:</strong> ${data.reply}</div>`;
+  chat.scrollTop = chat.scrollHeight;
+}
+

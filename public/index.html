@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Chat Bot</title>
+  <title>Chat Bot OpenAI</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -10,16 +10,13 @@
   <div class="chat-container">
     <h1>🤖 Chat Bot</h1>
 
-    <textarea id="message" placeholder="Type your message..."></textarea>
+    <div id="chat"></div>
 
-    <button id="send">Send</button>
-
-    <div class="response">
-      <strong>Bot:</strong>
-      <p id="reply">Waiting for message...</p>
-    </div>
+    <textarea id="message" placeholder="Digite sua mensagem..."></textarea>
+    <button onclick="sendMessage()">Enviar</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+

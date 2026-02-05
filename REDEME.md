@@ -1,127 +1,131 @@
-# 🤖 Chat Bot – Projeto em Node.js
+# 🤖 Chat Bot OpenAI (Node.js)
 
-Este projeto é uma aplicação simples de **Chat Bot** desenvolvida em **Node.js**, com uma interface **frontend básica e elegante** e um **backend** responsável por processar as mensagens.
+Este projeto é um **chat bot simples** desenvolvido em **Node.js**, com **backend em Express** e um **frontend básico em HTML, CSS e JavaScript**.
 
-O objetivo principal do projeto é demonstrar:
-- Estrutura de um projeto em Node.js
-- Comunicação entre frontend e backend
-- Manipulação de requisições HTTP
-- Tratamento de erros e uso de respostas simuladas
+O sistema foi projetado para se comunicar com a **API da OpenAI**, permitindo o envio de mensagens do usuário e o recebimento de respostas do modelo de linguagem.
+
+> ⚠️ Observação importante:  
+> No momento, a integração com a OpenAI não retorna respostas reais **apenas por falta de créditos na conta da API**, e não por erro de implementação.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📌 Funcionalidades
+
+- Servidor backend em **Node.js + Express**
+- Comunicação via **fetch (POST /chat)**
+- Frontend simples e funcional
+- Estrutura preparada para uso da **OpenAI API**
+- Tratamento de erro específico para **quota excedida**
+- Mensagem simulada quando não há crédito na API
+- Separação clara entre **frontend** e **backend**
+
+---
+
+## 🗂️ Estrutura do Projeto
 
 chat-bot-openai/
 │
-├─ image/
-│   ├─ Front.png
-│   └─ terminal.png
+├── image/
+│ ├── front.png
+│ └── terminal.png
 │
-├─ public/
-├─ index.js
-├─ package.json
-└─ README.md
+├── public/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+│
+├── .env
+├── .gitignore
+├── index.js
+├── package.json
+├── package-lock.json
+└── README.md
+
 
 ---
 
-## 🖼️ Demonstração do Projeto
+## 🖥️ Interface do Projeto
 
-### Interface Web (Frontend)
-Abaixo está a interface gráfica do Chat Bot, desenvolvida em HTML, CSS e JavaScript:
+### 📷 Frontend do Chat
+Imagem da interface web do chat:
 
-![Interface do Chat Bot](./image/front.png)
-
-### Execução no Terminal
-A imagem abaixo mostra o servidor rodando corretamente no terminal:
-
-![Execução no Terminal](./image/terminal.png)
+image/front.png
 
 
-## 🚀 Tecnologias Utilizadas
+### 📷 Execução no Terminal
+Imagem do projeto rodando no terminal:
 
-- **Node.js**
-- **Express.js**
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla)**
+image/terminal.png
+
+
+> As imagens estão incluídas no repositório dentro da pasta `image/`.
 
 ---
 
-## ▶️ Como Rodar o Projeto
+## 🚀 Como rodar o projeto
 
-1. Instale as dependências:
+### 1️⃣ Instalar dependências
 ```bash
 npm install
-Inicie o servidor:
+2️⃣ Criar arquivo .env
+OPENAI_API_KEY=SUA_CHAVE_AQUI
+Mesmo sem crédito, a aplicação continua funcionando normalmente.
 
+3️⃣ Iniciar o servidor
 npm start
-Acesse no navegador:
+O servidor será iniciado em:
 
 http://localhost:3000
-🖥️ Funcionamento da Aplicação
-O usuário digita uma mensagem no frontend.
+🔁 Fluxo de Funcionamento
+O usuário digita uma mensagem no frontend
 
-A mensagem é enviada para o backend via requisição HTTP.
+A mensagem é enviada para a rota /chat
 
-O backend processa a mensagem.
+O backend tenta se comunicar com a OpenAI
 
-Uma resposta é retornada e exibida na tela.
+Caso a API esteja sem crédito:
 
-Toda a aplicação roda localmente (localhost).
+O erro é tratado
 
-⚠️ Por que este projeto NÃO utiliza a API da OpenAI diretamente?
-Inicialmente, o projeto foi planejado para utilizar a API da OpenAI.
-Durante os testes, a API retornou o erro:
+Uma resposta simulada é exibida
 
-insufficient_quota
-Esse erro indica que o limite de uso (quota) da API foi excedido.
+O frontend mostra a resposta ao usuário
 
-✅ Solução Adotada (Contexto Acadêmico)
-Para garantir que o projeto:
+⚠️ Sobre a OpenAI API
+Este projeto está corretamente configurado para uso da OpenAI API.
 
-Funcionasse corretamente
+You exceeded your current quota
+Isso indica apenas que:
 
-Pudesse ser testado
+A chave é válida
 
-Fosse entregue dentro do prazo
+A requisição está correta
 
-Foi implementada uma resposta simulada no backend, substituindo temporariamente a resposta real da OpenAI.
+Não há crédito disponível na conta
 
-Essa solução permite:
+Ou seja, o projeto está funcional e pronto para uso real assim que uma chave com crédito for adicionada.
 
-Demonstrar toda a lógica de comunicação frontend ↔ backend
+🛠️ Tecnologias Utilizadas
+Node.js
 
-Tratar erros de forma adequada
+Express
 
-Evitar dependência de serviços pagos
+Axios
 
-Garantir estabilidade durante a avaliação
+dotenv
 
-A integração com a OpenAI pode ser facilmente adicionada futuramente.
+HTML5
 
-🔮 Melhorias Futuras
-Integrar a API real da OpenAI
+CSS3
 
-Salvar histórico de conversas
+JavaScript (Vanilla)
 
-Melhorar a interface do usuário
+✅ Status do Projeto
+✔ Estrutura finalizada
+✔ Backend funcional
+✔ Frontend funcional
+✔ Integração com OpenAI pronta
+✔ Tratamento de erro implementado
 
-Autenticação de usuários
-
-Publicar o projeto online
-
-✅ Conclusão
-Este projeto cumpre seu objetivo educacional ao demonstrar:
-
-Criação de um backend em Node.js
-
-Integração com frontend
-
-Tratamento de erros reais
-
-Tomada de decisão técnica diante de limitações externas
-
-Mesmo sem o uso direto da API da OpenAI, o projeto permanece completo, funcional e bem estruturado.
-
-👨‍💻 Projeto desenvolvido para fins educacionais.
+📌 Observação Final
+Este projeto foi desenvolvido com foco educacional, demonstrando a integração entre frontend, backend e APIs externas, seguindo boas práticas de organização e estrutura de código.
